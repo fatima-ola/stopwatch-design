@@ -5,25 +5,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./style.css">
-    <title>Stopwatch Timer</title>
+    <title>Multi-purpose Watch</title>
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="main-watch">
-            <div class="main-timers">
-                <span class="minutes">00</span>
-                <span class="seperator">:</span>
-                <span class="seconds">00</span>
-                <span class="seperator">:</span>
-                <span class="milli-seconds">00</span>
+        <div class="main-watch-screen">
+            <!-- HOME SCREEN -->
+            <header class="header">
+                <div class="weather"><img src="./images/weather.png" alt=""><span class="weather-info">20 &#176; C</span></div>
+                <div class="battery-level"><span>70%</span><img src="./images/Battery Normal.png" alt=""></i></div>
+            </header>
+            <div class="user-identity">
+                <p>Hello, James</p>
             </div>
-        </div>
-        <div class="control-buttons">
-            <button class="Start" onclick="startTimer();">START</button>
-            <button class="Stop" onclick="stop();">STOP</button>
-            <button class="Reset" onclick="resetValue();">RESET</button>
+            <div class="digital-time">
+                <span class="hour-counter">00</span>
+                <span class="seconds-counter">:</span>
+                <span class="minutes-counter">00am</span>
+                <!-- <span>am</span> -->
+            </div>
+            <div class="date-information">
+                <span class="day" >Thursday</span>
+                <span class="date" >3rd</span>
+                <span class="of">of</span>
+                <span class="month" >August</span>
+            </div>
+            <div class="home-btn">
+                <button class="hm-btn">Home</button>
+            </div> 
+            <!-- menu screen -->
+            <div class="menu-screen">
+                <div class="nav">
+                    <div class="weather"><span> BACK</span></div>
+                    <div class="battery-level"><span>70%</span><img src="./images/Battery Normal.png" alt=""></i></div>
+                </div>
+                <div class="icons-menu">
+                    <div class="icons"><img src="./images/weather icon.png" alt=""></div>
+                    <div class="icons"><img src="./images/calculator icon.png" alt=""></div>
+                    <div class="icons"><img src="./images/timer icon.png" alt=""></div>
+                    <div class="icons"><img src="./images/health icon.png" alt=""></div>
+                    <div class="icons"><img src="./images/maps icon.png" alt=""></div>
+                    <div class="icons"><img src="./images/weather icon.png" alt=""></div>
+                    <div class="icons"><img src="./images/timer icon.png" alt=""></div>
+                    <div class="icons"><img src="./images/health icon.png" alt=""></div>
+                    <div class="icons"><img src="./images/weather icon.png" alt=""></div>
+                    
+                </div>
+            </div>
+            
+            <!-- STOP WATCH -->
+            <!-- <div class="main-watch">
+                <div class="main-timers">
+                    <span class="minutes">00</span>
+                    <span class="seperator">:</span>
+                    <span class="seconds">00</span>
+                    <span class="seperator">:</span>
+                    <span class="milli-seconds">00</span>
+                </div>
+            </div>
+            <div class="control-buttons">
+                <button class="Start" onclick="startTimer();">START</button>
+                <button class="Stop" onclick="stop();">STOP</button>
+                <button class="Reset" onclick="resetValue();">RESET</button>
+            </div> -->
+    
+          <div id="location"></div>
         </div>
     </div>
 
