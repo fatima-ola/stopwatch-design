@@ -186,6 +186,49 @@ body{
   font-size: 12px;
 }
 
+/* Timer styles starts*/
+.timer-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.timer-btn{
+  margin-top: 22px;
+  display: flex;
+  justify-content: center; 
+}
+
+.reset-btn{
+  border-radius: 8px;
+  padding: 5px 16px;
+  color:#CAAEFF;
+  background: #000000;
+  font-weight: bold;
+  font-size: 12.25px;
+  border: 2px solid #CAAEFF;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.start-btn, .stop-btn{
+  border-radius: 8px;
+  padding: 5px 16px;
+  background: #814DE5;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12.25px;
+  border: 2px solid #814DE5;
+  cursor: pointer;
+}
+
+#stop{
+  display: none;
+}
+
+/* Timer style ends*/
+
 .home-btn{
   width: 100%;
   text-align: center;
