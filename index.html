@@ -26,7 +26,7 @@
                     <span class="hour-counter">00</span>
                     <span class="seconds-counter">:</span>
                     <span class="minutes-counter">00</span>
-                    <span class="period">am</span>
+                    <!-- <span class="period">am</span> -->
                 </div>
                 <div class="date-information">
                     <span class="day" >Thursday</span>
@@ -49,7 +49,7 @@
                     <div class="icons health-icon"><img src="./images/health icon.png" alt=""></div>
                     <div class="icons maps-icon"><img src="./images/maps icon.png" alt=""></div>
                     <div class="icons weather-icon"><img src="./images/weather icon.png" alt=""></div>
-                    <div class="icons timer-icon"><img src="./images/timer icon.png" alt=""></div>
+                    <div class="icons countdowntimer-icon"><img src="./images/timer icon.png" alt=""></div>
                     <div class="icons health-icon"><img src="./images/health icon.png" alt=""></div>
                     <div class="icons weather-icon"><img src="./images/weather icon.png" alt=""></div>
                 </div>
@@ -86,11 +86,34 @@
                     </div>
                 </div>
          </div> 
+         <div class="timer-screen">
+            <div class="nav">
+                <div class="back-to-menu-countdown"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
+            </div>
+             <div class="val-info">
+                <p id="hour-timer" class="label">Hours</p>
+                <p id="min-timer" class="label">Minutes</p>
+                <p id="sec-timer" class="label">Seconds</p>
+             </div>
+             <div class="set-val-info">
+                <input id="hourTimer-x" type="number" max="99" min="0" value="0" class="time">
+                <p id="p1" class="semicolon">:</p>
+                <input id="minuteTimer-x" type="number" max="60" min="0" value="0" class="time">
+                <p id="p2" class="semicolon">:</p>
+                <input id="secTimer-x" type="number" max="60" min="0" value="0" class="time">
+             </div>
+             <div class="timer-buttons">
+                <button id="start" class="btn">Start</button>
+                <button id="reset" class="btn">Reset</button>
+             </div>
+               
+         </div>
      </div>
 </body>
 <script src="./script/index.js"></script>
 <script src="./script/weather.js"></script>
 <script src="./script/maps.js"></script>
+<script src="./script/countdown timer.js"></script>
 
 
 </html>
