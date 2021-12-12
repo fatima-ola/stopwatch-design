@@ -141,74 +141,19 @@ backToMenuWeatherBtn.addEventListener("click", () =>{
     document.querySelector(".weather-screen").classList.remove("active-weather");
     
 })
+// enter countdown timer screen from menu screen
+const countDownTimerBtn = document.querySelector(".countdowntimer-icon")
 
+countDownTimerBtn.addEventListener("click", ()=>{
+    document.querySelector(".timer-screen").classList.add("active-timer-screen");
+    document.querySelector(".menu-screen").classList.remove("active-menu");
+})
 
+// exit countdown timer screen to menu screen
 
-// detect location 
+const backToMenuCountdown = document.querySelector(".back-to-menu-countdown");
 
-
-
-
-// // setting timer variable to zero
-// var timer = 0;
-// console.log(timer);
-// // declare timer interval but value isn't declared
-// var intervalValue;
-
-// // declare const for minutes, seconds and milliseconds counters
-
-
-// var minutesNotation = document.querySelector(".minutes");
-// var secondsNotation = document.querySelector(".seconds");
-// var milliSecondsNotation = document.querySelector(".milli-seconds");
-
-
-// console.log(minutesNotation, secondsNotation, milliSecondsNotation);
-
-// function startTimer() {
-//     stop();
-
-//     intervalValue = setInterval(function() {
-//             timer += 1 / 60;
-//             milliSecondsValue = Math.floor((timer - Math.floor(timer)) * 100);
-//             secondsValue = Math.floor((timer) - Math.floor(timer / 60) * 60);
-//             minuteValue = Math.floor((timer) / 60);
-
-//             milliSecondsNotation.innerHTML = milliSecondsValue < 10 ? "0" + milliSecondsValue.toString() : milliSecondsValue;
-
-//             secondsNotation.innerHTML = secondsValue < 10 ? "0" + secondsValue.toString() : secondsValue;
-
-//             minutesNotation.innerHTML = minuteValue < 10 ? "0" + minuteValue.toString() : minuteValue;
-//         })
-//         // resetValue();
-
-// }
-
-// function stop() {
-//     clearInterval(intervalValue);
-// }
-
-// function resetValue() {
-//     // minutesNotation.value = "00";
-//     // console.log(minutesNotation.textContent)
-//     // console.log(secondsNotation.textContent)
-//     // minutesNotation.textContent = "0" + "0";
-//     // secondsNotation.innerHTML = "0" + "0";
-
-//     location.reload();
-
-// }
-
-
-
-    //   var div = document.getElementById("location");
-
-    //   function getLocation() {
-    //     if (navigator.geolocation) {
-    //       navigator.geolocation.getCurrentPosition(showPosition, console.log);
-    //     } else {
-    //       div.innerHTML = "The Browser Does not Support Geolocation";
-    //     }
-    //   }
-
-    // DOM
+backToMenuCountdown.addEventListener("click", ()=>{
+    document.querySelector(".timer-screen").classList.remove("active-timer-screen");
+    document.querySelector(".menu-screen").classList.add("active-menu");
+})
