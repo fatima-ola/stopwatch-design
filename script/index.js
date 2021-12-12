@@ -101,9 +101,24 @@ const backToMenuBtn = document.querySelector(".back-to-home");
 backToMenuBtn.addEventListener("click", () =>{
     document.querySelector(".home-screen").classList.remove("active");
     document.querySelector(".menu-screen").classList.remove("active-menu");
-
-
 });
+
+// enter countdown timer screen from menu screen
+const countDownTimerBtn = document.querySelector(".countdowntimer-icon")
+
+countDownTimerBtn.addEventListener("click", ()=>{
+    document.querySelector(".counter-screen").classList.add("active-counter-screen");
+    document.querySelector(".menu-screen").classList.remove("active-menu");
+})
+
+// exit countdown timer screen to menu screen
+
+const backToMenuCountdown = document.querySelector(".back-to-menu-countdown");
+
+backToMenuCountdown.addEventListener("click", ()=>{
+    document.querySelector(".counter-screen").classList.remove("active-counter-screen");
+    document.querySelector(".menu-screen").classList.add("active-menu");
+})
 
     // weather application
 
@@ -176,6 +191,7 @@ var intervalValue;
 
 // declare const for minutes, seconds and milliseconds counters
 
+
 var minutesNotation = document.querySelector(".minutes");
 var secondsNotation = document.querySelector(".seconds");
 var milliSecondsNotation = document.querySelector(".milli-seconds");
@@ -186,8 +202,6 @@ let stopDisplay =  document.querySelector(".stop");
 
 function startTimer() {
     stop();
-    console.log("clicked start")
-
     intervalValue = setInterval(function() {
             timer += 1 / 60;
             milliSecondsValue = Math.floor((timer - Math.floor(timer)) * 100);
@@ -199,12 +213,10 @@ function startTimer() {
             secondsNotation.innerHTML = secondsValue < 10 ? "0" + secondsValue.toString() : secondsValue;
 
             minutesNotation.innerHTML = minuteValue < 10 ? "0" + minuteValue.toString() : minuteValue;
-        })
-        // resetValue();
-         startHide.style.display = "none";
-         stopDisplay.style.display = "block";
-
-        
+    })
+    // resetValue();
+    startHide.style.display = "none";
+    stopDisplay.style.display = "block";     
 
 }
 
