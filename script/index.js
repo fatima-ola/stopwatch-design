@@ -103,6 +103,7 @@ backToMenuBtn.addEventListener("click", () =>{
     document.querySelector(".menu-screen").classList.remove("active-menu");
 });
 
+//Counter feature
 // enter countdown timer screen from menu screen
 const countDownTimerBtn = document.querySelector(".countdowntimer-icon")
 
@@ -157,6 +158,7 @@ backToMenuWeatherBtn.addEventListener("click", () =>{
     document.querySelector(".weather-screen").classList.remove("active-weather");
     
 })
+
 
 // Timer feature
 
@@ -247,4 +249,5 @@ function resetValue() {
         }
       }
 
- 
+
+
