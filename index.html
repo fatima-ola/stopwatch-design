@@ -14,69 +14,83 @@
     <div class="wrapper">
         <div class="main-watch-screen">
             <!-- HOME SCREEN -->
-            <header class="header">
-                <div class="weather"><img src="./images/weather.png" alt=""><span class="weather-info">20 &#176; C</span></div>
-                <div class="battery-level"><span>70%</span><img src="./images/Battery Normal.png" alt=""></i></div>
-            </header>
-            <div class="user-identity">
-                <p>Hello, James</p>
-            </div>
-            <div class="digital-time">
-                <span class="hour-counter">00</span>
-                <span class="seconds-counter">:</span>
-                <span class="minutes-counter">00am</span>
-                <!-- <span>am</span> -->
-            </div>
-            <div class="date-information">
-                <span class="day" >Thursday</span>
-                <span class="date" >3rd</span>
-                <span class="of">of</span>
-                <span class="month" >August</span>
-            </div>
-            <div class="home-btn">
+            <div class="home-screen">
+                <header class="header">
+                    <div  class="weather"><img src="./images/weather.png" alt=""><span class="weather-info temp-value" ></span></div>
+                    <div class="battery-level"><span>70%</span><img src="./images/Battery Normal.png" alt=""></i></div>
+                </header>
+                <div class="user-identity">
+                    <p>Hello, James</p>
+                </div>
+                <div class="digital-time">
+                    <span class="hour-counter">00</span>
+                    <span class="seconds-counter">:</span>
+                    <span class="minutes-counter">00</span>
+                    <span class="period">am</span>
+                </div>
+                <div class="date-information">
+                    <span class="day" >Thursday</span>
+                    <span class="date" >3rd</span>
+                    <span class="of">of</span>
+                    <span class="month" >August</span>
+                </div>
+                <br>
                 <button class="hm-btn">Home</button>
-            </div> 
+            </div>
             <!-- menu screen -->
             <div class="menu-screen">
                 <div class="nav">
-                    <div class="weather"><span> BACK</span></div>
-                    <div class="battery-level"><span>70%</span><img src="./images/Battery Normal.png" alt=""></i></div>
+                    <div class="back-to-home"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
                 </div>
                 <div class="icons-menu">
-                    <div class="icons"><img src="./images/weather icon.png" alt=""></div>
-                    <div class="icons"><img src="./images/calculator icon.png" alt=""></div>
-                    <div class="icons"><img src="./images/timer icon.png" alt=""></div>
-                    <div class="icons"><img src="./images/health icon.png" alt=""></div>
-                    <div class="icons"><img src="./images/maps icon.png" alt=""></div>
-                    <div class="icons"><img src="./images/weather icon.png" alt=""></div>
-                    <div class="icons"><img src="./images/timer icon.png" alt=""></div>
-                    <div class="icons"><img src="./images/health icon.png" alt=""></div>
-                    <div class="icons"><img src="./images/weather icon.png" alt=""></div>
-                    
+                    <div class="icons weather-icon"><img src="./images/weather icon.png" alt=""></div>
+                    <div class="icons calculator-icon"><img src="./images/calculator icon.png" alt=""></div>
+                    <div class="icons timer-icon"><img src="./images/timer icon.png" alt=""></div>
+                    <div class="icons health-icon"><img src="./images/health icon.png" alt=""></div>
+                    <div class="icons maps-icon"><img src="./images/maps icon.png" alt=""></div>
+                    <div class="icons weather-icon"><img src="./images/weather icon.png" alt=""></div>
+                    <div class="icons timer-icon"><img src="./images/timer icon.png" alt=""></div>
+                    <div class="icons health-icon"><img src="./images/health icon.png" alt=""></div>
+                    <div class="icons weather-icon"><img src="./images/weather icon.png" alt=""></div>
                 </div>
             </div>
-            
-            <!-- STOP WATCH -->
-            <!-- <div class="main-watch">
-                <div class="main-timers">
-                    <span class="minutes">00</span>
-                    <span class="seperator">:</span>
-                    <span class="seconds">00</span>
-                    <span class="seperator">:</span>
-                    <span class="milli-seconds">00</span>
-                </div>
-            </div>
-            <div class="control-buttons">
-                <button class="Start" onclick="startTimer();">START</button>
-                <button class="Stop" onclick="stop();">STOP</button>
-                <button class="Reset" onclick="resetValue();">RESET</button>
-            </div> -->
-    
-          <div id="location"></div>
-        </div>
-    </div>
 
+            <!-- Weather screen -->
+            <div class="weather-screen">
+                <div class="nav">
+                    <div class="back-to-menu-weather"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
+                </div>
+                <div class="weather-main">
+                    <!-- <form  id="search-form">
+                        <input type="search" name="" id="search-input" placeholder="Hello James,enter city name" required autocomplete="off">
+                        <button id="search-button" type="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form> -->
+                    <div class="weather-display">
+                        <div class="location">
+                            <!-- current Location -->
+                        </div>
+                        <div id="temp">
+                                <img id="temp-icon" src="" alt="please wait....">
+                                <p><span id="temp-value">
+                                    <!-- temperature value -->
+                                </span><span id="temp-unit" ></span> </p>
+                        </div>
+                        <br>
+                        <br>
+                        <div id="climate">
+                            <!-- climate humidity value -->
+                        </div>
+                        <div id="wind">
+                            <!-- wind speed value -->
+                        </div>
+                    </div>
+                </div>
+         </div> 
+     </div>
 </body>
-<script src="./index.js"></script>
+<script src="./script/index.js"></script>
+<script src="./script/weather.js"></script>
+<script src="./script/maps.js"></script>
+
 
 </html>
