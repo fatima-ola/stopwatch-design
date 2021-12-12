@@ -145,7 +145,6 @@ body{
   width: 200px;
   height: 250px;
   border-radius: 20px;
-  padding-top: 10px;
 }
 
 .main-watch-screen{
@@ -207,6 +206,20 @@ body{
 }
 
 /* Timer styles starts*/
+.timer-screen{
+  position: absolute;
+  top: -250%;
+  opacity: 0;
+}
+
+.timer-screen.active-timer-screen{
+  position: absolute;
+  top: 5%;
+  opacity: 1;
+  height: 100%;
+  border-radius: 20px;
+}
+
 .timer-wrapper{
   display: flex;
   justify-content: center;
@@ -243,7 +256,7 @@ body{
   cursor: pointer;
 }
 
-#stop{
+.stop{
   display: none;
 }
 
@@ -281,7 +294,6 @@ body{
   transform: translate(-50%, -50%);     
   color: #ffffff; 
   border-radius: 20px;
-  /* background: red; */
   padding: 20px;
   align-items: center;
   text-align: center;
@@ -289,7 +301,6 @@ body{
 }
 
 .icons-menu{
- 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
