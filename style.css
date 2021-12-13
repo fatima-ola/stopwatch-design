@@ -1,4 +1,4 @@
-/* RESETS */
+RESETS
 html,
 body,
 div,
@@ -146,6 +146,7 @@ body{
   height: 250px;
   border-radius: 20px;
 }
+
 .main-watch-screen{
   width: 200px;
   height: 250px;
@@ -180,6 +181,7 @@ body{
   justify-content: space-between;
   align-items: center;
   font-size: 10px;
+  padding: 0 10px;
 }
 
 .user-identity{
@@ -203,6 +205,63 @@ body{
   font-size: 12px;
 }
 
+/* Timer styles starts*/
+.timer-screen{
+  position: absolute;
+  top: -250%;
+  opacity: 0;
+}
+
+.timer-screen.active-timer-screen{
+  position: absolute;
+  top: 5%;
+  opacity: 1;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.timer-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.timer-btn{
+  margin-top: 22px;
+  display: flex;
+  justify-content: center; 
+}
+
+.reset-btn{
+  border-radius: 8px;
+  padding: 5px 16px;
+  color:#CAAEFF;
+  background: #000000;
+  font-weight: bold;
+  font-size: 12.25px;
+  border: 2px solid #CAAEFF;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.start-btn, .stop-btn{
+  border-radius: 8px;
+  padding: 5px 16px;
+  background: #814DE5;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12.25px;
+  border: 2px solid #814DE5;
+  cursor: pointer;
+}
+
+.stop{
+  display: none;
+}
+
+/* Timer style ends*/
+
 .home-btn{
   width: 100%;
   text-align: center;
@@ -222,6 +281,79 @@ body{
   
 }
 
+
+/* countdown timer */
+
+.counter-screen{
+  /* background-color: red; */
+  position: absolute;
+  top: -250%;
+  opacity: 0;
+  width: 100%;
+}
+
+.counter-screen.active-counter-screen{
+  position: absolute;
+  top: 5%;
+  /* bottom: 50%; */
+  opacity: 1;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.val-info, .set-val-info{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.set-val-info input{
+  width: 40px;
+  height: 40px;
+}
+
+.set-val-info input{
+  outline: none;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+  color: #814DE5;
+  background: none;
+}
+
+.counter-buttons{
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#start, #reset{
+  padding: 5px 12px;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+#start{
+  background: #814DE5;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+#reset{
+  background: white;
+  color: #814DE5;
+  font-weight: bolder;
+}
+
+.back-to-menu-countdown{
+  cursor: pointer;
+}
+
 /* menu screen */
 
 
@@ -235,7 +367,6 @@ body{
   transform: translate(-50%, -50%);     
   color: #ffffff; 
   border-radius: 20px;
-  /* background: red; */
   padding: 20px;
   align-items: center;
   text-align: center;
@@ -243,7 +374,6 @@ body{
 }
 
 .icons-menu{
- 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;

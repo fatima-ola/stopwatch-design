@@ -101,9 +101,25 @@ const backToMenuBtn = document.querySelector(".back-to-home");
 backToMenuBtn.addEventListener("click", () =>{
     document.querySelector(".home-screen").classList.remove("active");
     document.querySelector(".menu-screen").classList.remove("active-menu");
-
-
 });
+
+//Counter feature
+// enter countdown timer screen from menu screen
+const countDownTimerBtn = document.querySelector(".countdowntimer-icon")
+
+countDownTimerBtn.addEventListener("click", ()=>{
+    document.querySelector(".counter-screen").classList.add("active-counter-screen");
+    document.querySelector(".menu-screen").classList.remove("active-menu");
+})
+
+// exit countdown timer screen to menu screen
+
+const backToMenuCountdown = document.querySelector(".back-to-menu-countdown");
+
+backToMenuCountdown.addEventListener("click", ()=>{
+    document.querySelector(".counter-screen").classList.remove("active-counter-screen");
+    document.querySelector(".menu-screen").classList.add("active-menu");
+})
 
     // weather application
 
@@ -127,6 +143,7 @@ const searchInputCity = document.querySelector("#search-input");
 const searchCityBtn =document.querySelector("#search-button");
     
 
+//from weathericon to weather Screen
 
 weatherBtn.addEventListener("click", ()=>{
     document.querySelector(".menu-screen").classList.remove("active-menu");
@@ -141,19 +158,96 @@ backToMenuWeatherBtn.addEventListener("click", () =>{
     document.querySelector(".weather-screen").classList.remove("active-weather");
     
 })
-// enter countdown timer screen from menu screen
-const countDownTimerBtn = document.querySelector(".countdowntimer-icon")
 
-countDownTimerBtn.addEventListener("click", ()=>{
-    document.querySelector(".timer-screen").classList.add("active-timer-screen");
+
+// Timer feature
+
+// transition from menu to timer screen
+const timerBtn = document.querySelector(".timer-icon");
+
+timerBtn.addEventListener("click", ()=>{
     document.querySelector(".menu-screen").classList.remove("active-menu");
+    document.querySelector(".timer-screen").classList.add("active-timer-screen");
 })
 
-// exit countdown timer screen to menu screen
+// go back to menu from timer screen
+const backToMenuTimerBtn = document.querySelector(".back-to-menu-timer");
 
-const backToMenuCountdown = document.querySelector(".back-to-menu-countdown");
-
-backToMenuCountdown.addEventListener("click", ()=>{
-    document.querySelector(".timer-screen").classList.remove("active-timer-screen");
+backToMenuTimerBtn.addEventListener("click", ()=>{
     document.querySelector(".menu-screen").classList.add("active-menu");
+    document.querySelector(".timer-screen").classList.remove("active-timer-screen");
 })
+
+
+
+
+
+// detect location 
+
+
+// setting timer variable to zero
+var timer = 0;
+
+// declare timer interval but value isn't declared
+var intervalValue;
+
+// declare const for minutes, seconds and milliseconds counters
+
+
+var minutesNotation = document.querySelector(".minutes");
+var secondsNotation = document.querySelector(".seconds");
+var milliSecondsNotation = document.querySelector(".milli-seconds");
+let startHide = document.querySelector(".start");
+let stopDisplay =  document.querySelector(".stop");
+
+
+
+function startTimer() {
+    stop();
+    intervalValue = setInterval(function() {
+            timer += 1 / 60;
+            milliSecondsValue = Math.floor((timer - Math.floor(timer)) * 100);
+            secondsValue = Math.floor((timer) - Math.floor(timer / 60) * 60);
+            minuteValue = Math.floor((timer) / 60);
+
+            milliSecondsNotation.innerHTML = milliSecondsValue < 10 ? "0" + milliSecondsValue.toString() : milliSecondsValue;
+
+            secondsNotation.innerHTML = secondsValue < 10 ? "0" + secondsValue.toString() : secondsValue;
+
+            minutesNotation.innerHTML = minuteValue < 10 ? "0" + minuteValue.toString() : minuteValue;
+    })
+    // resetValue();
+    startHide.style.display = "none";
+    stopDisplay.style.display = "block";     
+
+}
+
+function stop() {
+    clearInterval(intervalValue);
+    startHide.style.display = "block";
+    stopDisplay.style.display = "none";
+}
+
+function resetValue() {
+    minutesNotation.textContent = "0" + "0";
+    secondsNotation.textContent = "0" + "0";
+    milliSecondsNotation.textContent = "0" + "0";
+
+    // location.reload();
+
+}
+
+
+
+      var div = document.getElementById("location");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, console.log);
+        } else {
+          div.innerHTML = "The Browser Does not Support Geolocation";
+        }
+      }
+
+
+

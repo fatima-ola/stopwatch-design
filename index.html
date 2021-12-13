@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./style.css">
     <title>Multi-purpose Watch</title>
+    <script src="./script/index.js" async></script>
+    <script src="./script/countdown timer.js" async></script>
 </head>
 
 <body>
@@ -85,35 +87,64 @@
                         </div>
                     </div>
                 </div>
-         </div> 
-         <div class="timer-screen">
-            <div class="nav">
-                <div class="back-to-menu-countdown"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
             </div>
-             <div class="val-info">
-                <p id="hour-timer" class="label">Hours</p>
-                <p id="min-timer" class="label">Minutes</p>
-                <p id="sec-timer" class="label">Seconds</p>
-             </div>
-             <div class="set-val-info">
-                <input id="hourTimer-x" type="number" max="99" min="0" value="0" class="time">
-                <p id="p1" class="semicolon">:</p>
-                <input id="minuteTimer-x" type="number" max="60" min="0" value="0" class="time">
-                <p id="p2" class="semicolon">:</p>
-                <input id="secTimer-x" type="number" max="60" min="0" value="0" class="time">
-             </div>
-             <div class="timer-buttons">
-                <button id="start" class="btn">Start</button>
-                <button id="reset" class="btn">Reset</button>
-             </div>
-               
-         </div>
-     </div>
-</body>
-<script src="./script/index.js"></script>
+
+            <!-- Timer Screen -->
+           <div class="timer-screen">
+                <div class="nav">
+                    <div class="back-to-menu-timer"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
+                </div>
+                <section class="timer-wrapper">
+                    <div>
+                        <div class="digital-time">
+                            <span class="minutes">00</span>
+                            <span class="seperator">:</span>
+                            <span class="seconds">00</span>
+                            <span class="seperator">:</span>
+                            <span class="milli-seconds">00</span>
+                        </div>
+                        <div class="timer-btn">
+                            <div class="reset">
+                                <button type="reset" class="reset-btn" onclick="resetValue();">Reset</button>
+                            </div>
+                            <div class="start">
+                                <button class="start-btn" onclick="startTimer();">Start</button>
+                            </div>
+                            <div class="stop">
+                                <button class="stop-btn" onclick="stop();">Stop</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div id="location"></div>
+           </div>
+            <!-- Counter Screen -->
+           <div class="counter-screen">
+                <div class="nav">
+                    <div class="back-to-menu-countdown"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
+                </div>
+                <div class="val-info">
+                    <p id="hour-timer" class="label">Hours</p>
+                    <p id="min-timer" class="label">Minutes</p>
+                    <p id="sec-timer" class="label">Seconds</p>
+                </div>
+                <div class="set-val-info">
+                    <input id="hourTimer-x" type="number" max="99" min="0" value="0" class="time">
+                    <p id="p1" class="semicolon">:</p>
+                    <input id="minuteTimer-x" type="number" max="60" min="0" value="0" class="time">
+                    <p id="p2" class="semicolon">:</p>
+                    <input id="secTimer-x" type="number" max="60" min="0" value="0" class="time">
+                </div>
+                <div class="counter-buttons">
+                    <button id="start" class="btn">Start</button>
+                    <button id="reset" class="btn">Reset</button>
+                </div>
+            </div>
+        </div> 
+    </div>  
 <script src="./script/weather.js"></script>
 <script src="./script/maps.js"></script>
-<script src="./script/countdown timer.js"></script>
+</body>
 
 
 </html>
