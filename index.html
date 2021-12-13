@@ -6,21 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Multi-purpose Watch</title>
-    <script src="./script/index.js" async></script>
-    <script src="./script/countdown timer.js" defer></script>
+    
 </head>
 
 <body>
     <div class="wrapper">
         <div class="main-watch-screen">
+            <header class="header">
+                <div  class="weather"><img src="./images/weather.png" alt=""><span class="weather-info temp-value" ></span></div>
+                <div class="battery-level"><span>70%</span><img src="./images/Battery Normal.png" alt=""></i></div>
+            </header>
             <!-- HOME SCREEN -->
             <div class="home-screen">
-                <header class="header">
+                <!-- <header class="header">
                     <div  class="weather"><img src="./images/weather.png" alt=""><span class="weather-info temp-value" ></span></div>
                     <div class="battery-level"><span>70%</span><img src="./images/Battery Normal.png" alt=""></i></div>
-                </header>
+                </header> -->
                 <div class="user-identity">
                     <p>Hello, James</p>
                 </div>
@@ -41,13 +47,13 @@
             </div>
             <!-- menu screen -->
             <div class="menu-screen">
-                <div class="nav">
+                <header class="header">
                     <div class="back-to-home"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
-                </div>
+                </header>
                 <div class="icons-menu">
                     <div class="icons weather-icon"><img src="./images/weather icon.png" alt=""></div>
                     <div class="icons calculator-icon"><img src="./images/calculator icon.png" alt=""></div>
-                    <div class="icons timer-icon"><img src="./images/timer icon.png" alt=""></div>
+                    <div class="icons timer-icon"><img src="./images/stopwatch icon.png" alt=""></div>
                     <div class="icons health-icon"><img src="./images/health icon.png" alt=""></div>
                     <div class="icons maps-icon"><img src="./images/maps icon.png" alt=""></div>
                     <div class="icons weather-icon"><img src="./images/weather icon.png" alt=""></div>
@@ -59,9 +65,6 @@
 
             <!-- Weather screen -->
             <div class="weather-screen">
-                <div class="nav">
-                    <div class="back-to-menu-weather"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
-                </div>
                 <div class="weather-main">
                     <!-- <form  id="search-form">
                         <input type="search" name="" id="search-input" placeholder="Hello James,enter city name" required autocomplete="off">
@@ -87,64 +90,53 @@
                         </div>
                     </div>
                 </div>
+                <div class="nav">
+                    <div class="back-to-menu-weather"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
+                </div>
+         </div>     
             </div>
-
-            <!-- Timer Screen -->
+                </div>
+                 <!-- Timer Screen -->
            <div class="timer-screen">
                 <div class="nav">
                     <div class="back-to-menu-timer"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
                 </div>
                 <section class="timer-wrapper">
-                    <div>
-                        <div class="digital-time">
-                            <span class="minutes">00</span>
-                            <span class="seperator">:</span>
-                            <span class="seconds">00</span>
-                            <span class="seperator">:</span>
-                            <span class="milli-seconds">00</span>
-                        </div>
-                        <div class="timer-btn">
-                            <div class="reset">
-                                <button type="reset" class="reset-btn" onclick="resetValue();">Reset</button>
-                            </div>
-                            <div class="start">
-                                <button class="start-btn" onclick="startTimer();">Start</button>
-                            </div>
-                            <div class="stop">
-                                <button class="stop-btn" onclick="stop();">Stop</button>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <p id="time"><span id="minutess">00</span>:<span id="second">00</span>:<span id="tens">00</span></p>
+                    <button id="btn-start">Start</button>
+                    <button id="btn-stop">Stop</button>
+                    <button id="btn-reset">Reset</button>
                 </section>
-                <div id="location"></div>
            </div>
             <!-- Counter Screen -->
            <div class="counter-screen">
-                <div class="nav">
-                    <div class="back-to-menu-countdown"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
-                </div>
-                <div class="val-info">
-                    <p id="hour-timer" class="label">Hours</p>
-                    <p id="min-timer" class="label">Minutes</p>
-                    <p id="sec-timer" class="label">Seconds</p>
-                </div>
-                <div class="set-val-info">
+                <div class="user-identity-in">
+                    <p>Hi James, Set a timer..</p>
+                </div>  
+                 
+                 <div class="set-val-info">
                     <input id="hourTimer-x" type="number" max="99" min="0" value="0" class="time">
-                    <p id="p1" class="semicolon">:</p>
+                    <p id="p1" class="semicolon"><p id="hour-timer" class="label">Hr</p></p>
                     <input id="minuteTimer-x" type="number" max="60" min="0" value="0" class="time">
-                    <p id="p2" class="semicolon">:</p>
+                    <p id="p2" class="semicolon"><p id="min-timer" class="label">Min</p></p>
                     <input id="secTimer-x" type="number" max="60" min="0" value="0" class="time">
+                    <p id="sec-timer" class="label">Sec</p>
                 </div>
-                <div class="counter-buttons">
+                 <div class="timer-buttons">
+                    <button id="reset" class="btn">Cancel</button>
                     <button id="start" class="btn">Start</button>
-                    <button id="reset" class="btn">Reset</button>
+                 </div>
+                 <div class="nav">
+                    <div class="back-to-menu-countdown"><span><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</span></div>
                 </div>
             </div>
         </div> 
-    </div>  
-<script src="./script/weather.js"></script>
-<script src="./script/maps.js"></script>
+    </div> 
+    <script src="./script/index.js" ></script>
+    <script src="./script/weather.js" ></script>
+    <script src="./script/clock.js" ></script>
+    <script src="./script/stopwatch.js" async ></script>
+    <script src="./script/countdown timer.js" ></script> 
 </body>
-
-
 </html>
