@@ -86,6 +86,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: 'PT Sans', sans-serif;
 }
 article,
 aside,
@@ -182,11 +183,22 @@ body{
   font-size: 10px;
 }
 
+.header.deactivate-header{
+  display: none;
+}
+
 .user-identity{
   text-align: center;
   padding: 1.5rem 0;
   color: #bcbcbd;
   font-size: 16px;
+}
+
+.user-identity-in{
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #bcbcbd;
+  font-size: 20px;
 }
 
 .digital-time{
@@ -355,7 +367,7 @@ padding: 10px 0;
 .val-info, .set-val-info{
   display: flex;
   justify-content: space-around;
-  padding: 20px 0;
+  padding: 12px 0;
   align-items: center;
 }
 
@@ -374,13 +386,13 @@ padding: 10px 0;
 }
 
 .timer-buttons{
-  padding: 20px 0;
+  padding: 25px 0;
   display: flex;
   justify-content: space-evenly;
 }
 
 #start, #reset{
-  padding: 5px 12px;
+  /* padding: 8px 12px; */
   font-size: 12px;
   border: none;
   outline: none;
@@ -393,12 +405,17 @@ padding: 10px 0;
   background: #814DE5;
   color: #ffffff;
   font-weight: bolder;
+  padding: 8px 15px;
+  border: 2px solid #814DE5;
 }
 
 #reset{
-  background: white;
-  color: #814DE5;
+  /* background: white; */
+  color: #ffffff;
   font-weight: bolder;
+  border: 2px solid #ffffff;
+  background: none;
+  padding: 8px 12px;
 }
 
 .back-to-menu-countdown{

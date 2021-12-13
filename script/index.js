@@ -62,14 +62,16 @@ function clock(){
         monthCounter.innerHTML  = "December";
     }
 
-    
-
-
-    if(hourCounter.innerHTML <= 9 || minutesCounter.innerHTML <=9){
-        hourCounter.innerHTML = "0" + hourCounter.innerHTML;
+    if(minutesCounter.innerHTML < 10){
         minutesCounter.innerHTML = "0" + minutesCounter.innerHTML;
-    } 
-    
+    }
+
+    if(hourCounter.innerHTML <10){
+        hourCounter.innerHTML = "0" + hourCounter.innerHTML;
+    }
+
+
+
     if (dateCounter.innerHTML === 1) {
         dateCounter.innerHTML = dateCounterValue + "st";
     } else if (dateCounter.innerHTML === 2){
@@ -92,6 +94,8 @@ const homeBtn = document.querySelector(".hm-btn");
 homeBtn.addEventListener("click", () =>{
     document.querySelector(".home-screen").classList.add("active");
     document.querySelector(".menu-screen").classList.add("active-menu");
+    document.querySelector(".header").classList.add("deactivate-header");
+
 });
 
 // transition from menu screen back to home screen
@@ -101,8 +105,8 @@ const backToMenuBtn = document.querySelector(".back-to-home");
 backToMenuBtn.addEventListener("click", () =>{
     document.querySelector(".home-screen").classList.remove("active");
     document.querySelector(".menu-screen").classList.remove("active-menu");
-
-
+    document.querySelector(".header").classList.remove("deactivate-header");
+  
 });
 
     // weather application
@@ -131,6 +135,8 @@ const searchCityBtn =document.querySelector("#search-button");
 weatherBtn.addEventListener("click", ()=>{
     document.querySelector(".menu-screen").classList.remove("active-menu");
     document.querySelector(".weather-screen").classList.add("active-weather");
+    document.querySelector(".header").classList.remove("deactivate-header");
+
 })
 
 // go back to menu from weather screen
@@ -139,7 +145,8 @@ const backToMenuWeatherBtn = document.querySelector(".back-to-menu-weather");
 backToMenuWeatherBtn.addEventListener("click", () =>{
     document.querySelector(".menu-screen").classList.add("active-menu");
     document.querySelector(".weather-screen").classList.remove("active-weather");
-    
+    document.querySelector(".header").classList.add("deactivate-header");
+ 
 })
 // enter countdown timer screen from menu screen
 const countDownTimerBtn = document.querySelector(".countdowntimer-icon")
@@ -147,6 +154,8 @@ const countDownTimerBtn = document.querySelector(".countdowntimer-icon")
 countDownTimerBtn.addEventListener("click", ()=>{
     document.querySelector(".timer-screen").classList.add("active-timer-screen");
     document.querySelector(".menu-screen").classList.remove("active-menu");
+    document.querySelector(".header").classList.remove("deactivate-header");
+
 })
 
 // exit countdown timer screen to menu screen
@@ -156,4 +165,6 @@ const backToMenuCountdown = document.querySelector(".back-to-menu-countdown");
 backToMenuCountdown.addEventListener("click", ()=>{
     document.querySelector(".timer-screen").classList.remove("active-timer-screen");
     document.querySelector(".menu-screen").classList.add("active-menu");
+    document.querySelector(".header").classList.add("deactivate-header");
+
 })
