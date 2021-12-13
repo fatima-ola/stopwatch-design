@@ -1,54 +1,66 @@
+window.onload = function(){
+    let myminutes = 00;
+   let seconds = 00;
+   let tens = 00;
 
-// setting timer variable to zero
-var timer = 0;
+   let Outputminutes = document.getElementById("minutess");
+   let OutputSeconds = document.getElementById("second");
+   let OutputTens = document.getElementById("tens");
+   let buttonStart = document.getElementById("btn-start");
+   let buttonStop = document.getElementById("btn-stop");
+   let buttonReset = document.getElementById("btn-reset");
+   let Interval;
 
-// declare timer interval but value isn't declared
-var intervalValue;
-
-// declare const for minutes, seconds and milliseconds counters
-
-
-var minutesNotation = document.querySelector(".minutes");
-var secondsNotation = document.querySelector(".seconds");
-var milliSecondsNotation = document.querySelector(".milli-seconds");
-let startHide = document.querySelector(".start");
-let stopDisplay =  document.querySelector(".stop");
-
-const startTimerStopWatch = document.querySelector("#stopwatchStartBtn");
-
-startTimerStopWatch.addEventListener("click", ()=>{
-    // stop();
-    intervalValue = setInterval(()=>{
-        timer += 1 / 60;
-        milliSecondsValue = Math.floor((timer - Math.floor(timer)) * 100);
-        secondsValue = Math.floor((timer) - Math.floor(timer / 60) * 60);
-        minuteValue = Math.floor((timer) / 60);
-
-        milliSecondsNotation.innerHTML = milliSecondsValue < 10 ? "0" + milliSecondsValue.toString() : milliSecondsValue;
-
-        secondsNotation.innerHTML = secondsValue < 10 ? "0" + secondsValue.toString() : secondsValue;
-
-        minutesNotation.innerHTML = minuteValue < 10 ? "0" + minuteValue.toString() : minuteValue;
+    buttonStart.addEventListener('click', () => {
+        clearInterval(Interval);
+        Interval = setInterval(startTimer, 10);  // millisecond 10 = 0.01 second
     });
 
-// function startTimer() {
-    
-    
-//     // resetValue();
-//     startHide.style.display = "none";
-//     stopDisplay.style.display = "block";     
+    buttonStop.addEventListener('click', () => {
+        clearInterval(Interval);
+    });
 
-// }
+    buttonReset.addEventListener('click', () => {
+        clearInterval(Interval);
 
-// function stop() {
-//     clearInterval(intervalValue);
-//     startHide.style.display = "block";
-//     stopDisplay.style.display = "none";
-// }
+        tens = "00";
+        seconds = "00";
+        myminutes = "00";
+        OutputSeconds.innerHTML = seconds;
+        OutputTens.innerHTML = tens;
+        Outputminutes.innerHTML = myminutes;
+    });
 
-// function resetValue() {
-//     minutesNotation.textContent = "0" + "0";
-//     secondsNotation.textContent = "0" + "0";
-//     milliSecondsNotation.textContent = "0" + "0";
+    function startTimer(){
+        tens++;
+        if(tens <= 9){
+            OutputTens.innerHTML = "0" + tens;
+        }
 
-//     // location.reload();
+        if(tens > 9){
+            OutputTens.innerHTML = tens;
+        }
+
+        if(tens > 99){
+            seconds++;
+            OutputSeconds.innerHTML = "0" + seconds;
+            tens = 0;
+            OutputTens.innerHTML = "0" + 0;
+        }
+
+        if(seconds > 9){
+            OutputSeconds.innerHTML = seconds;
+        }
+
+        if(seconds > 60){
+            myminutes++;
+            Outputminutes.innerHTML = "0" + myminutes;
+            seconds = 0;
+            OutputSeconds.innerHTML = "0" + 0;
+        }
+
+        
+
+        
+    }
+}

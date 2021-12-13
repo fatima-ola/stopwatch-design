@@ -8,7 +8,7 @@ const displayWeather = (data) => {
   const { icon } = data.weather[0];
   const { temp, humidity } = data.main;
   const { speed } = data.wind;
-  document.querySelector(".location").innerText = `${name}`; /*  I HAD TO HARD CODE THE STATE VALUE HERE */
+  document.querySelector(".location").innerText = `LAGOS`; /*  I HAD TO HARD CODE THE STATE VALUE HERE */
   document.querySelector("#temp-value").innerText = `${temp} °C`;
   document.querySelector(".temp-value").innerText = `${temp} °C`;
   document.querySelector("#temp-icon").src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
